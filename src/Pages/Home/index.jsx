@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react"
 import axios from "axios";
+
 import Card from "../../Components/Card";
+import "./style.css"
 
 export default function Home(){
     const [values, setValues] = useState();
@@ -28,23 +30,22 @@ export default function Home(){
     
     return (
         <div className="container">
-            <input 
-                type="text" 
-                name="nome" 
-                placeholder="Nome do jogo" 
-                onChange={handleChangeValues}
-            />
+            <h1>Cadastro de jogos</h1>
+
+            <input type="text" name="nome" placeholder="Nome do jogo" onChange={handleChangeValues}/>
 
             <input type="text" name="estilo" placeholder="Estilo de jogo" onChange={handleChangeValues}/>
 
             <button onClick={handleClickButton}>Cadastrar</button>
 
-            {typeof listGames !== "undefined" && 
-                listGames.map((value) => {
-                    return(
-                        <Card key={value.id} name={value.gam_nome} style={value.gam_estilo}/>
-                    );
-            })}
+            <div className="card-wrapper">
+                {typeof listGames !== "undefined" && 
+                    listGames.map((value) => {
+                        return(
+                            <Card key={value.id} name={value.gam_nome} style={value.gam_estilo}/>
+                        );
+                })}
+            </div>
         </div>  
             
     )

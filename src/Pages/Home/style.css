@@ -1,0 +1,80 @@
+:root {
+  --text: #d7d7d7;
+  --text-dark: #9c9c9c;
+  --input-background: #282828;
+  --pink: #974ec3;
+  --light-pink: #fe7bbf;
+}
+
+.container {
+  min-width: 320px;
+  max-width: 1200px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  margin: 0 auto;
+  margin-top: 50px;
+}
+
+h1 {
+  color: var(--text);
+
+  border-bottom: 7px solid var(--pink);
+  border-radius: 7px;
+
+  padding-bottom: 3px;
+}
+
+input {
+  width: 50%;
+  height: 40px;
+
+  font-family: "Roboto", sans-serif;
+  font-size: 0.8rem;
+  font-weight: 500;
+
+  border: 1px solid var(--pink);
+  border-radius: 20px;
+  outline: none;
+
+  background-color: var(--input-background);
+  color: var(--text-dark);
+
+  margin-top: 20px;
+  padding-left: 20px;
+}
+
+input::placeholder {
+  color: var(--text-dark);
+}
+
+input:-ms-input-placeholder {
+  color: var(--text-dark);
+}
+
+button {
+  width: 52%;
+  height: 40px;
+
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+
+  border-radius: 20px;
+  border: 0;
+  outline: none;
+
+  background-color: var(--pink);
+  color: var(--text);
+
+  margin-top: 20px;
+
+  transition: all 2s;
+}
+
+button:hover {
+  background-color: var(--light-pink);
+}
